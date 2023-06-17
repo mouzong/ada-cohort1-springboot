@@ -5,6 +5,7 @@ import com.adacorp.cohort1.repositories.ClientRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClientService {
@@ -23,5 +24,10 @@ public class ClientService {
 
         clientRepository.save(client);
         return client;
+    }
+
+    public Optional<ClientModel> getClientById(Integer id) {
+
+        return clientRepository.findById(id);
     }
 }

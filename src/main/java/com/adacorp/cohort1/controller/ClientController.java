@@ -5,6 +5,7 @@ import com.adacorp.cohort1.services.ClientService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/clients")
@@ -15,7 +16,7 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @GetMapping("")
+    @GetMapping
     public List<ClientModel> getAllClients(){
         return clientService.getAllClients();
     }
@@ -23,5 +24,10 @@ public class ClientController {
     @PostMapping
     public ClientModel addClient(@RequestBody ClientModel client){
         return clientService.addClient(client);
+    }
+
+    @GetMapping("{id}")
+    public Optional<ClientModel> getClientById(@PathVariable("id") Integer id){
+        return clientService.getClientById(id);
     }
 }
