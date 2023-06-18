@@ -8,6 +8,7 @@ import lombok.*;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientModel {

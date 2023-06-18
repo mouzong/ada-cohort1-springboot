@@ -30,4 +30,17 @@ public class ClientService {
 
         return clientRepository.findById(id);
     }
+
+    public ClientModel editClient(Integer id, ClientModel clientAModifier) {
+        Optional<ClientModel> client = clientRepository.findById(id);
+
+        client.get()
+                .builder()
+                .nom(clientAModifier.getNom())
+                .prenom(clientAModifier.getPrenom())
+                .build();
+
+        return clientRepository.save(client.get());
+
+    }
 }
