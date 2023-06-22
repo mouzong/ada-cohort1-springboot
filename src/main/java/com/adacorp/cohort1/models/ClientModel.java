@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.util.UUID;
+
 @Entity
 @Data
 @Builder
@@ -15,10 +17,11 @@ public class ClientModel {
 
     @Id
     @GeneratedValue
-    private Integer idClient;
+    private UUID idClient;
 
     private String nom;
     private String prenom;
+    privte
 
     /**
      * 1 - Analyse du besoin :

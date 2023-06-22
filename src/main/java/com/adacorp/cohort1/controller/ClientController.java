@@ -35,6 +35,11 @@ public class ClientController {
         return clientService.editClient(id,clientAModifier);
     }
 
+    @DeleteMapping("{id}")
+    public void deleteCLient(@PathVariable("id") Integer id){
+        clientService.deleteClient(id);
+    }
+
 
 
 
